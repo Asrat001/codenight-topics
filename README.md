@@ -20,5 +20,5 @@ To learn more about Next.js and Supbase, take a look at the following resources:
 -   [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
 ## If you went to support Me?
-<img width="400" height="400" alt="Screenshot 2023-12-13 at 6 11 26 PM" src="./public/suport.jpg">
+<img width="200" height="200" style="object-fit: cover"  alt="Screenshot 2023-12-13 at 6 11 26 PM" src="./public/suport.jpg">
 
