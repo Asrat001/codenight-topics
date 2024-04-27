@@ -69,7 +69,7 @@ export async function GET(request: Request) {
 									{author}
 								</h1>
 								<p tw="text-white m-0 text-blue-500 text-2xl mt-3">
-									https://next-supabase-vote.vercel.app/
+								 https://codenight-topics.vercel.app/
 								</p>
 							</div>
 						</div>
