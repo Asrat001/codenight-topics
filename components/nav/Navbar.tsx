@@ -1,14 +1,32 @@
 "use client";
 import { RocketIcon } from "@radix-ui/react-icons";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import Profile from "./Profile";
 import LoginForm from "./LoginForm";
 import { useUser } from "@/lib/hook";
+import { createSupabaseBrower } from "@/lib/supabase/client";
+
 
 export default function Navbar() {
+	const [numberOfusers,setNumberofUsers]=useState<number>(0)
+	const supabase = createSupabaseBrower();
+useEffect(
+	 () =>{
+		const getNumberofUsers =async ()=>{
+			const {count,error}=await supabase.from("users").select('*',{count:"exact"});
+			if(!error){
+				setNumberofUsers(count!)
+			}
+		}
+		getNumberofUsers()
+	}
+	,[])	
+	
+
 	return (
-		<nav className=" w-full flex items-center justify-between ">
+	<div className="">
+			<nav className=" w-full flex items-center justify-between ">
 			<Link href="/" className="flex items-center gap-2">
 				<h1 className=" text-[15px] md:text-3xl font-bold ">CodenightTopics</h1>
 
@@ -16,6 +34,8 @@ export default function Navbar() {
 			</Link>
 			<RenderProfile />
 		</nav>
+      <p className="mt-10 text-yellow-500">{numberOfusers} People have been Here </p>
+	</div>
 	);
 }
 
