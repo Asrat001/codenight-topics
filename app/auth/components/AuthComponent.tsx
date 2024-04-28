@@ -3,6 +3,7 @@ import React from "react";
 import { GitHubLogoIcon } from "@radix-ui/react-icons";
 import { createBrowserClient } from "@supabase/ssr";
 import { Button } from "@/components/ui/button";
+import { AnonymouslyModal } from "@/components/AnonymouslyModal";
 
 export default function AuthComponent() {
 	const supabase = createBrowserClient(
@@ -25,12 +26,15 @@ export default function AuthComponent() {
 		<div className="flex items-center justify-center text-gray-200 h-96 border border-dashed border-zinc-500">
 			<div className="space-y-5 text-center ">
 				<h1 className="text-3xl font-bold">Login to Vote</h1>
-				<Button
+		          <div className="flex items-center gap-4">
+				  <Button
 					onClick={handleLoginWithGihub}
 					className="flex items-center gap-2 mx-auto"
 				>
 					<GitHubLogoIcon /> Login with Github
 				</Button>
+				<AnonymouslyModal/>
+				  </div>
 			</div>
 		</div>
 	);

@@ -49,7 +49,7 @@ export default function Comment({ voteId }: { voteId: string }) {
 	const { data: comments } = useComment(voteId);
 	const [hasMore, setHasMore] = useState(false);
 	const [loading, setLoading] = useState(true);
-
+	const anonpics='https://upload.wikimedia.org/wikipedia/commons/a/a6/Anonymous_emblem.svg'
 	useEffect(() => {
 		fetchComments();
 		// eslint-disable-next-line
@@ -169,7 +169,7 @@ export default function Comment({ voteId }: { voteId: string }) {
 								>
 									<div className="flex gap-2 items-start">
 										<Image
-											src={comment.users?.avatar_url!}
+											src={comment.users?.avatar_url!||anonpics}
 											alt={comment.users?.user_name!}
 											width={60}
 											height={60}

@@ -12,15 +12,16 @@ import { User } from "@supabase/supabase-js";
 import Link from "next/link";
 
 export default function Profile({ user }: { user: User | undefined }) {
+	const anonpics='https://upload.wikimedia.org/wikipedia/commons/a/a6/Anonymous_emblem.svg'
 	return (
 		<>
 			<Popover>
 				<PopoverTrigger asChild id="close-popover">
 					<Image
-						src={user?.user_metadata?.avatar_url}
+						src={user?.user_metadata?.avatar_url||anonpics}
 						width={50}
 						height={50}
-						alt={user?.user_metadata?.user_name}
+						alt={user?.user_metadata?.user_name+"anonomesly"}
 						className=" rounded-full ring-green-500 ring cursor-pointer hover:scale-125 transition-all animate-fade"
 					/>
 				</PopoverTrigger>

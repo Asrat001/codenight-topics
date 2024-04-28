@@ -21,6 +21,7 @@ export default function Navbar() {
 
 const RenderProfile = () => {
 	const { data, isFetching } = useUser();
+	console.log(data)
 
 	if (isFetching) {
 		return <> </>;
